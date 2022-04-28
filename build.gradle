@@ -1,6 +1,26 @@
 plugins {
 	id 'maven-publish'
 	alias(libs.plugins.quilt.loom)
+	id "com.modrinth.minotaur" version "2.+"
+}
+
+// Modrinth
+
+
+import com.modrinth.minotaur.dependencies.DependencyType
+import com.modrinth.minotaur.dependencies.ModDependency
+
+modrinth {
+	token = "$System.env.MODRINTH_TOKEN"
+	projectId = "YJwHjwdD"
+	versionName = "The Quilt Mod: " + project.version + "Alpha";
+	uploadFile = remapJar
+	gameVersions = ['1.18.2' ]
+	loaders = ['quilt']
+	versionType = 'alpha'
+	dependencies = [
+	        new ModDependency("qvIfYCYJ", DependencyType.REQUIRED)
+	]
 }
 
 archivesBaseName = project.archives_base_name
