@@ -19,7 +19,7 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "ch."
+			"init": "ch.fantasticgame28.quiltmod.QuiltMod"
 		},
 		"depends": [
 			{
